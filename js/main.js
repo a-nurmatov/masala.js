@@ -123,7 +123,7 @@ function submit() {
     } catch (error) {
       show.innerHTML = error;
     }
-    if (answer == answers[i]) {
+    if (JSON.stringify(answer) == JSON.stringify(answers[i])) {
       trueAnswer++;
       show.innerHTML += `<p class="d-flex justify-content-between align-items-center flex-wrap">${functionName}(${check[i]}) => ${answers[i]} <button class="btn bg-success result-badge">Javobingiz: ${answer}</button></p>`;
     } else {
