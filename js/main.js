@@ -1,9 +1,7 @@
-// if (!localStorage.getItem('questionSet')) {
-  
-// }
-
-let storage = JSON.stringify(questionSet);
-localStorage.setItem('questionSet', storage);
+if (!localStorage.getItem('questionSet')) {
+  let storage = JSON.stringify(questionSet);
+  localStorage.setItem('questionSet', storage);
+}
 
 questionSet = JSON.parse(localStorage.getItem('questionSet'));
 body.onload = home();
@@ -95,8 +93,8 @@ function questionWorkspace(id, key) {
   }
   text += '</ul>'
   questionText.innerHTML = text;
-  if (!localStorage.getItem('' + id + key)){
-  document.getElementById('answer').value = `function ${question.fun_name} {
+  if (!localStorage.getItem('' + id + key)) {
+    document.getElementById('answer').value = `function ${question.fun_name} {
 
 }`} else document.getElementById('answer').value = localStorage.getItem('' + id + key);
 
@@ -121,23 +119,23 @@ function submit() {
   for (let i = 0; i < check.length; i++) {
     let answer;
     try {
-     answer = eval(ans + `${functionName}(${check[i]})`);
+      answer = eval(ans + `${functionName}(${check[i]})`);
     } catch (error) {
       show.innerHTML = error;
     }
     if (answer == answers[i]) {
       trueAnswer++;
       show.innerHTML += `<p class="d-flex justify-content-between align-items-center flex-wrap">${functionName}(${check[i]}) => ${answers[i]} <button class="btn bg-success result-badge">Javobingiz: ${answer}</button></p>`;
-    }else {
+    } else {
       show.innerHTML += `<p class="d-flex justify-content-between align-items-center flex-wrap">${functionName}(${check[i]}) => ${answers[i]} <button class="btn bg-danger result-badge">Javobingiz: ${answer}</button></p>`;
     }
   }
   if (trueAnswer === answers.length) {
-  document.getElementById('final-result').innerHTML = '<i class="fa fa-check-circle" aria-hidden="true"></i>'
-  question.solved = true;
-  let storage = JSON.stringify(questionSet);
-  localStorage.setItem('questionSet', storage);
-  questionSet = JSON.parse(localStorage.getItem('questionSet'));
+    document.getElementById('final-result').innerHTML = '<i class="fa fa-check-circle" aria-hidden="true"></i>'
+    question.solved = true;
+    let storage = JSON.stringify(questionSet);
+    localStorage.setItem('questionSet', storage);
+    questionSet = JSON.parse(localStorage.getItem('questionSet'));
   }
 
 }
@@ -166,7 +164,7 @@ function update(e) {
 input.addEventListener('input', update);
 
 
-document.getElementById('answer').addEventListener('keydown', function(e) {
+document.getElementById('answer').addEventListener('keydown', function (e) {
   if (e.key == 'Tab') {
     e.preventDefault();
     var start = this.selectionStart;
