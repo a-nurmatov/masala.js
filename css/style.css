@@ -165,7 +165,7 @@ svg {
         outline: none; }
   .right-box #result {
     height: 230px;
-    border-radius: 20px;
+    border-radius: 8px;
     padding: 20px;
     background-color: #1F1F2B;
     overflow: auto; }
