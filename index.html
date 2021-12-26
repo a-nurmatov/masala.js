@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="css/style.css">
+  <title>masala.js</title>
+</head>
+
+<body>
+  <div class="container px-4" id="home">
+    <header class="pt-4">
+      <h1 onclick="home()" class="cursor">masala.js</h1>
+      <p class="text-secondary">Dasturlashga oid turli qiyinlikdagi masalalar</p>
+    </header>
+    <div class="row py-3 mt-3" id="setOfQuestions">
+    </div>
+  </div>
+  <div class="container d-none" id="workspace">
+    <div class="row">
+      <div class="col-lg-12 right-box mt-4 mt-lg-0">
+        <div class="row">
+          <div class="col-lg-6">
+            <div id="question-text"></div>
+            <div class="editor">
+              <div class="gutter">
+                <span></span>
+              </div>
+              <textarea name="" id="answer" rows="5"></textarea>
+            </div>
+            <button class="btn float-end mt-4" onclick="submit()">Topshirish</button>
+          </div>
+          <div class="col-lg-6">
+            <h4 class="text-white">Natijalar <span id="final-result"></span></h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+
+  <script src="./js/const.js"></script>
+  <script src="./js/questions/string1.js"></script>
+  <script src="./js/questionSet.js"></script>
+  <script src="./js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro&family=Cousine&display=swap');
+
+
+* {
+  font-family: 'Cousine', monospace;
+}
+
+.container {
+  max-width: 1380px;
+}
+
+body {
+  background-color: $body-bg;
+  color: $text-color;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: $body-bg;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: $box-bg;
+  border-radius: 12px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: $hover-color;
+}
+
+.btn {
+  background-color: #1F1F2B;
+  color: white;
+  padding: 8px 24px;
+  &:hover {
+    background-color: #11101f;
+    color: gold;
+  }
+}

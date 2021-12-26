@@ -1,0 +1,175 @@
+.cursor:hover {
+  cursor: pointer;
+  color: gold;
+}
+
+
+header {
+  border-bottom: 0.2px solid $box-bg;
+}
+
+.set-box {
+  padding: 20px;
+  border-radius: 20px;
+  border-radius: 15px;
+  background-color: $box-bg;
+  margin-bottom: 30px;
+  transition: .5s;
+
+  &:hover {
+    cursor: pointer;
+    color: gold;
+  }
+
+  &:hover circle {
+    stroke: gold;
+  }
+
+  .set-title {
+    font-size: 24px;
+  }
+
+  .problem-number {
+    font-size: 14px;
+  }
+}
+
+.skill {
+  height: 80px;
+  width: 80px;
+  position: relative;
+}
+
+.outer {
+  height: 80px;
+  width: 80px;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  border-radius: 50%;
+  box-shadow: inset 0px 0px 39px 7px #1F1F2B;
+}
+
+.inner {
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#number {
+  font-weight: 600;
+  color: $text-color;
+}
+
+circle {
+  fill: none;
+  stroke: $text-color;
+  stroke-width: 5px;
+  stroke-dasharray: 260;
+  stroke-dashoffset: 260;
+  transition: stroke-dashoffset 2s linear;
+}
+
+svg {
+  position: absolute;
+}
+
+.left-box {
+  padding: 0 15px;
+  .nav {
+    width: 100%;
+    background-color: #303041;
+    border-radius: 10px;
+
+    .nav-link {
+      color: #5F5F75;
+      padding: 15px;
+      border-bottom: 1px solid #1F1F2B;
+      text-align: left;
+      font-size: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      &:hover {
+        color: #5255d1;
+      }
+    }
+
+    .active {
+      background-color: transparent !important;
+      color: white;
+    }
+  }
+}
+
+.right-box {
+  padding: 0 25px;
+  .row {
+    padding: 20px 10px;
+    border-radius: 10px;
+    background-color: #303041;
+  }
+  .home-text {
+    text-align: justify;
+  }
+  .editor {
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%; 
+    border-radius: 10px;
+    box-shadow: 0px 5px 10px rgba(0,0,0,0.5);
+
+    .gutter {
+      background: #11101f;
+      color: grey;
+      border-radius: 10px 0 0 10px;
+      display: flex;
+      flex-flow: column wrap;
+      padding: 5px;
+    
+      span {
+        padding: 0.5rem;
+        color: #62a9b9;
+      }
+    }
+
+    textarea {
+      background:#1F1F2B;
+      flex: 1;
+      border-radius: 0 10px 10px 0;
+      font-size: 18px;
+      border: 0;
+      color: white;
+      padding: 12px 1rem;
+      line-height: 2.2;
+      overflow: hidden;
+      &:focus {
+        outline: none
+      }
+    }
+  }
+
+  .tab-pane {
+    color: white;
+  }
+
+  .table {
+    background-color: #1F1F2B;
+    border-radius: 10px;
+    tr:hover td {
+      color: #5255d1;
+    }
+    td {
+      border-bottom: none;
+      padding: 20px 10px;
+    }
+    .td-bottom {
+      border-bottom: 1px solid white;
+    }
+  }
+}
