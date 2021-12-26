@@ -34,6 +34,10 @@ body {
     background-color: #11101f;
     color: gold; }
 
+.result-badge {
+  padding: 4px 10px;
+  width: 200px; }
+
 .cursor:hover {
   cursor: pointer;
   color: gold; }
@@ -47,7 +51,8 @@ header {
   border-radius: 15px;
   background-color: #303041;
   margin-bottom: 30px;
-  transition: .5s; }
+  transition: .5s;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5); }
   .set-box:hover {
     cursor: pointer;
     color: gold; }
@@ -71,7 +76,8 @@ header {
   justify-content: center;
   align-items: center;
   border-radius: 50%;
-  box-shadow: inset 0px 0px 39px 7px #1F1F2B; }
+  box-shadow: inset 0px 0px 39px 7px #1F1F2B;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5); }
 
 .inner {
   height: 80px;
@@ -132,38 +138,36 @@ svg {
     border-radius: 10px;
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5); }
     .right-box .editor .gutter {
-      background: #11101f;
-      color: grey;
+      background: #11101F;
+      color: white;
       border-radius: 10px 0 0 10px;
       display: flex;
       flex-flow: column wrap;
-      padding: 5px; }
+      padding: 10px 5px 0; }
       .right-box .editor .gutter span {
-        padding: 0.5rem;
-        color: #62a9b9; }
+        padding: 1rem 0.5rem 0;
+        color: white; }
     .right-box .editor textarea {
       background: #1F1F2B;
+      min-height: 460px;
       flex: 1;
       border-radius: 0 10px 10px 0;
       font-size: 18px;
       border: 0;
       color: white;
-      padding: 12px 1rem;
+      padding: 20px 1rem;
       line-height: 2.2;
-      overflow: hidden; }
+      overflow: hidden;
+      -moz-tab-size: 2;
+      -o-tab-size: 2;
+      tab-size: 2; }
       .right-box .editor textarea:focus {
         outline: none; }
-  .right-box .tab-pane {
-    color: white; }
-  .right-box .table {
+  .right-box #result {
+    height: 230px;
+    border-radius: 20px;
+    padding: 20px;
     background-color: #1F1F2B;
-    border-radius: 10px; }
-    .right-box .table tr:hover td {
-      color: #5255d1; }
-    .right-box .table td {
-      border-bottom: none;
-      padding: 20px 10px; }
-    .right-box .table .td-bottom {
-      border-bottom: 1px solid white; }
+    overflow: auto; }
 
 /*# sourceMappingURL=style.css.map */

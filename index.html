@@ -19,7 +19,7 @@
   <div class="container px-4" id="home">
     <header class="pt-4">
       <h1 onclick="home()" class="cursor">masala.js</h1>
-      <p class="text-secondary">Dasturlashga oid turli qiyinlikdagi masalalar</p>
+      <p class="text-secondary" id="subtitle">JavaScript dasturlash tiliga oid turli qiyinlikdagi masalalar</p>
     </header>
     <div class="row py-3 mt-3" id="setOfQuestions">
     </div>
@@ -30,16 +30,20 @@
         <div class="row">
           <div class="col-lg-6">
             <div id="question-text"></div>
+            <h5 class="text-white">Natijalar <span class="text-success" id="final-result"></span></h5>
+            <div class="mb-lg-0 mb-4">
+              <p id="result"></p>
+            </div>
+          </div>
+          <div class="col-lg-6">
             <div class="editor">
               <div class="gutter">
                 <span></span>
               </div>
               <textarea name="" id="answer" rows="5"></textarea>
             </div>
-            <button class="btn float-end mt-4" onclick="submit()">Topshirish</button>
+            <button class="btn float-end mt-4" id="submit" onclick="submit()">Topshirish</button>
           </div>
-          <div class="col-lg-6">
-            <h4 class="text-white">Natijalar <span id="final-result"></span></h4>
           </div>
         </div>
       </div>
@@ -51,7 +55,7 @@
     crossorigin="anonymous"></script>
 
   <script src="./js/const.js"></script>
-  <script src="./js/questions/string1.js"></script>
+  <script src="./js/questions/begin1.js"></script>
   <script src="./js/questionSet.js"></script>
   <script src="./js/main.js"></script>
 </body>

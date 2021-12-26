@@ -15,6 +15,7 @@ header {
   background-color: $box-bg;
   margin-bottom: 30px;
   transition: .5s;
+  box-shadow: 0px 5px 10px rgba(0,0,0,0.5);
 
   &:hover {
     cursor: pointer;
@@ -49,6 +50,7 @@ header {
   align-items: center; 
   border-radius: 50%;
   box-shadow: inset 0px 0px 39px 7px #1F1F2B;
+  box-shadow: 0px 5px 10px rgba(0,0,0,0.5);
 }
 
 .inner {
@@ -125,51 +127,44 @@ svg {
     box-shadow: 0px 5px 10px rgba(0,0,0,0.5);
 
     .gutter {
-      background: #11101f;
-      color: grey;
+      background: $hover-color;
+      color: $text-color;
       border-radius: 10px 0 0 10px;
       display: flex;
       flex-flow: column wrap;
-      padding: 5px;
+      padding: 10px 5px 0;
     
       span {
-        padding: 0.5rem;
-        color: #62a9b9;
+        padding: 1rem 0.5rem 0;
+        color: $text-color;
       }
     }
 
     textarea {
-      background:#1F1F2B;
+      background: $body-bg;
+      min-height: 460px;
       flex: 1;
       border-radius: 0 10px 10px 0;
       font-size: 18px;
       border: 0;
       color: white;
-      padding: 12px 1rem;
+      padding: 20px 1rem;
       line-height: 2.2;
       overflow: hidden;
+      -moz-tab-size : 2;
+      -o-tab-size : 2;
+      tab-size : 2;
       &:focus {
         outline: none
       }
     }
   }
 
-  .tab-pane {
-    color: white;
-  }
-
-  .table {
-    background-color: #1F1F2B;
-    border-radius: 10px;
-    tr:hover td {
-      color: #5255d1;
-    }
-    td {
-      border-bottom: none;
-      padding: 20px 10px;
-    }
-    .td-bottom {
-      border-bottom: 1px solid white;
-    }
+  #result {
+    height: 230px;
+    border-radius: 20px;
+    padding: 20px;
+    background-color: $body-bg;
+    overflow: auto;
   }
 }
