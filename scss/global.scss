@@ -14,6 +14,11 @@ body {
   color: $text-color;
 }
 
+ul {
+  padding: 0;
+  list-style-position: inside;
+}
+
 /* width */
 ::-webkit-scrollbar {
   width: 8px;
