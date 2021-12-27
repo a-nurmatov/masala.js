@@ -68,7 +68,6 @@ function questionWorkspace(id, key) {
   let question = obj.questions[key];
   if (question.solved) document.getElementById('final-result').innerHTML = '<i class="fa fa-check-circle" aria-hidden="true"></i>';
   else document.getElementById('final-result').innerHTML = '';
-  console.log(question.solved, 'check workspace');
   let functionName = question.fun_name;
   document.querySelector('#setOfQuestions').classList.add('d-none')
   let workspace = document.querySelector('#workspace')
