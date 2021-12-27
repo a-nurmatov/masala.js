@@ -1,7 +1,11 @@
-if (!localStorage.getItem('questionSet')) {
-  let storage = JSON.stringify(questionSet);
+// if (!localStorage.getItem('questionSet')) {
+  
+// }
+
+localStorage.clear();
+
+let storage = JSON.stringify(questionSet);
   localStorage.setItem('questionSet', storage);
-}
 
 questionSet = JSON.parse(localStorage.getItem('questionSet'));
 body.onload = home();
