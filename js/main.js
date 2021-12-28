@@ -5,8 +5,9 @@ if (!browserStorage) {
   localStorage.setItem('questionSet', storage);
 }else if (browserStorage != storage){
   console.log(browserStorage != storage, 'worked');
-  for (let key in browserStorage){
-    let set = browserStorage[key].questions;
+  let memory = JSON.parse(browserStorage)
+  for (let key in memory){
+    let set = memory[key].questions;
     let currentSet = questionSet[key].questions;
     for (let q in set){
       currentSet[q].solved = set[q].solved
