@@ -1,26 +1,12 @@
 let storage = JSON.stringify(questionSet);
-let browserStorage = localStorage.getItem('questionSet')
-console.log(browserStorage != storage);
+let browserStorage = localStorage.getItem('questionSet');
 if (!browserStorage) {
   localStorage.setItem('questionSet', storage);
-}else if (browserStorage != storage){
-  console.log(browserStorage != storage, 'worked');
-  let memory = JSON.parse(browserStorage)
-  for (let key in memory){
-    console.log(typeof key, key)
-    let set = memory[key].questions;
-    console.log(questionSet[key])
-    let currentSet = questionSet[key]['questions'];
-    console.log('currentset', currentSet)
-    for (let q in set){
-      currentSet[q].solved = set[q].solved
-    }
-  }
+}else if (objectLength(JSON.parse(browserStorage)) !== objectLength(questionSet)){
   localStorage.removeItem('questionSet');
-  localStorage.setItem('questionSet', questionSet);
+  localStorage.setItem('questionSet', storage);
 }
 
-storage = JSON.stringify(questionSet)
 questionSet = JSON.parse(browserStorage);
 body.onload = home();
 
