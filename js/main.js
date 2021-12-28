@@ -7,6 +7,7 @@ if (!browserStorage) {
   console.log(browserStorage != storage, 'worked');
   let memory = JSON.parse(browserStorage)
   for (let key in memory){
+    console.log(key)
     let set = memory[key].questions;
     let currentSet = questionSet[key].questions;
     for (let q in set){
