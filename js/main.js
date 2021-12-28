@@ -1,13 +1,15 @@
-if (!localStorage.getItem('questionSet')) {
-  let storage = JSON.stringify(questionSet);
+let storage = JSON.stringify(questionSet);
+let browserStorage = localStorage.getItem('questionSet')
+console.log(browserStorage != storage);
+if (!browserStorage) {
   localStorage.setItem('questionSet', storage);
-}else if (objectLength(JSON.parse(localStorage.getItem('questionSet'))) < 3){
-  localStorage.clear();
-  let storage = JSON.stringify(questionSet);
+}else if (browserStorage != storage){
+  console.log(browserStorage != storage, 'worked');
+  localStorage.remove('questionSet');
   localStorage.setItem('questionSet', storage);
 }
 
-questionSet = JSON.parse(localStorage.getItem('questionSet'));
+questionSet = JSON.parse(browserStorage);
 body.onload = home();
 
 function home() {
