@@ -35,4 +35,10 @@ var questionSet = {
     questionsNumber: objectLength(recursion),
     questions: recursion,
   },
+  '7': {
+    id: "7",
+    title: "Loop",
+    questionsNumber: objectLength(recursion),
+    questions: recursion,
+  },
 }
