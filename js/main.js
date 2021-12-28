@@ -5,7 +5,7 @@ if (!browserStorage) {
   localStorage.setItem('questionSet', storage);
 }else if (browserStorage != storage){
   console.log(browserStorage != storage, 'worked');
-  localStorage.remove('questionSet');
+  localStorage.removeItem('questionSet');
   localStorage.setItem('questionSet', storage);
 }
 
