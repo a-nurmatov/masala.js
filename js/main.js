@@ -10,7 +10,8 @@ if (!browserStorage) {
     console.log(typeof key, key)
     let set = memory[key].questions;
     console.log(questionSet[key])
-    let currentSet = questionSet[key].questions;
+    let currentSet = questionSet[key][questions];
+    console.log('currentset', currentSet)
     for (let q in set){
       currentSet[q].solved = set[q].solved
     }
