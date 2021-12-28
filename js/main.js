@@ -1,6 +1,10 @@
 if (!localStorage.getItem('questionSet')) {
   let storage = JSON.stringify(questionSet);
   localStorage.setItem('questionSet', storage);
+}else if (objectLength(JSON.parse(localStorage.getItem('questionSet'))) < 3){
+  localStorage.clear();
+  let storage = JSON.stringify(questionSet);
+  localStorage.setItem('questionSet', storage);
 }
 
 questionSet = JSON.parse(localStorage.getItem('questionSet'));
