@@ -42,6 +42,10 @@ function home() {
 function calculateProportion(s) {
   let solved = Object.values(s.questions).filter((q) => q.solved).length;
   let proportion = solved / s.questionsNumber;
+  if (proportion == 1) {
+    document.getElementById(`circle${s.id}`).style.stroke = 'gold';
+    document.getElementById(`percent${s.id}`).style.color = 'gold';
+  }
   document.getElementById(`percent${s.id}`).innerHTML = Math.floor(proportion * 100) + '%';
   document.getElementById(`circle${s.id}`).style.strokeDashoffset = Math.floor(260 - 260 * proportion);
 }
