@@ -2,7 +2,7 @@ let storage = JSON.stringify(questionSet);
 let browserStorage = localStorage.getItem('questionSet');
 if (!browserStorage) {
   localStorage.setItem('questionSet', storage);
-}else if (objectLength(JSON.parse(browserStorage)) !== objectLength(questionSet)){
+} else if (objectLength(JSON.parse(browserStorage)) !== objectLength(questionSet)) {
   localStorage.removeItem('questionSet');
   localStorage.setItem('questionSet', storage);
 }
@@ -106,6 +106,7 @@ function questionWorkspace(id, key) {
 }`} else document.getElementById('answer').value = localStorage.getItem('' + id + key);
 
   document.getElementById('submit').setAttribute('data-question', `${id}${key}`);
+  update();
 }
 
 function submit() {
@@ -146,18 +147,15 @@ function submit() {
     localStorage.setItem('questionSet', storage);
     questionSet = JSON.parse(localStorage.getItem('questionSet'));
   }
-
 }
 
-
-const input = document.querySelector('textarea');
+const input = document.querySelector('#answer');
 const gutter = document.querySelector('.gutter');
 let val = input.value;
 let numOfLines = 1;
 
 function update(e) {
   val = input.value;
-
   let lineBreaks = val.match(/\n/gi) || [];
   let numOfSpans = gutter.childElementCount;
   numOfLines = lineBreaks.length ? lineBreaks.length + 1 : 1;
