@@ -6,8 +6,7 @@ if (!browserStorage) {
   localStorage.removeItem('questionSet');
   localStorage.setItem('questionSet', storage);
 }
-
-questionSet = JSON.parse(browserStorage);
+if (browserStorage) questionSet = JSON.parse(browserStorage);
 body.onload = home();
 
 function home() {
