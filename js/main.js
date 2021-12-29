@@ -134,6 +134,8 @@ function submit() {
     }
   }
   if (trueAnswer === answers.length) {
+    confetti.start()
+    setTimeout(function () { confetti.stop(); }, 2000)
     document.getElementById('final-result').innerHTML = '<i class="fa fa-check-circle" aria-hidden="true"></i>'
     question.solved = true;
     let storage = JSON.stringify(questionSet);
