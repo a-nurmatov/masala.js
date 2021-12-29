@@ -7,6 +7,7 @@ if (!browserStorage) {
   localStorage.setItem('questionSet', storage);
 }
 if (browserStorage) questionSet = JSON.parse(browserStorage);
+
 body.onload = home();
 
 function home() {
@@ -139,6 +140,7 @@ function submit() {
   }
   if (trueAnswer === answers.length) {
     confetti.start()
+    localStorage.setItem(questionData, textForAnswer)
     setTimeout(function () { confetti.stop(); }, 2000)
     document.getElementById('final-result').innerHTML = '<i class="fa fa-check-circle" aria-hidden="true"></i>'
     question.solved = true;
