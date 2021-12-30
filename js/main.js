@@ -115,7 +115,7 @@ function submit() {
   let setId = questionData[0];
   let questionId = questionData[1];
   let question = questionSet[setId].questions[questionId];
-  question.solved ? true : localStorage.setItem(questionData, textForAnswer);
+  question.solved ? true : localStorage.setItem(questionData.join(''), textForAnswer);
   let functionData = question.fun_name.split(' ');
   let ans = document.getElementById('answer').value;
   let functionName = functionData[0];
@@ -140,7 +140,7 @@ function submit() {
   }
   if (trueAnswer === answers.length) {
     confetti.start()
-    localStorage.setItem(questionData, textForAnswer)
+    localStorage.setItem(questionData.join(''), textForAnswer)
     setTimeout(function () { confetti.stop(); }, 2000)
     document.getElementById('final-result').innerHTML = '<i class="fa fa-check-circle" aria-hidden="true"></i>'
     question.solved = true;
