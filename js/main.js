@@ -105,12 +105,12 @@ function questionWorkspace(id, key) {
 
 }`} else document.getElementById('answer').value = localStorage.getItem('' + id + key);
 
-  document.getElementById('submit').setAttribute('data-question', `${id}${key}`);
+  document.getElementById('submit').setAttribute('data-question', `${id} ${key}`);
   update();
 }
 
 function submit() {
-  let questionData = document.getElementById('submit').getAttribute('data-question');
+  let questionData = document.getElementById('submit').getAttribute('data-question').split(' ');
   let textForAnswer = document.getElementById('answer').value;
   let setId = questionData[0];
   let questionId = questionData[1];
