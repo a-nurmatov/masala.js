@@ -11,6 +11,7 @@ if (browserStorage) questionSet = JSON.parse(browserStorage);
 body.onload = home();
 
 function home() {
+  document.querySelector('header').style.borderWidth = '0.2px';
   let setOfQuestions = document.getElementById('setOfQuestions');
   document.getElementById('subtitle').classList.remove('d-none')
   setOfQuestions.classList.remove('d-none');
@@ -51,7 +52,9 @@ function calculateProportion(s) {
 }
 
 function listOfQuestions(id) {
+  document.getElementById('subtitle').classList.remove('d-none');
   let set = questionSet[id];
+  document.querySelector('header').style.borderWidth = '0.2px';
   let setOfQuestions = document.getElementById('setOfQuestions');
   setOfQuestions.classList.remove('d-none');
   document.querySelector('#workspace').classList.add('d-none')
@@ -71,7 +74,8 @@ function listOfQuestions(id) {
 }
 
 function questionWorkspace(id, key) {
-  document.getElementById('subtitle').classList.add('d-none')
+  document.getElementById('subtitle').classList.add('d-none');
+  document.querySelector('header').style.borderWidth = '0';
   let obj = questionSet[id];
   let question = obj.questions[key];
   if (question.solved) document.getElementById('final-result').innerHTML = '<i class="fa fa-check-circle" aria-hidden="true"></i>';
@@ -109,6 +113,7 @@ function questionWorkspace(id, key) {
   update();
 }
 
+let sound = document.querySelector('#applause');
 function submit() {
   let questionData = document.getElementById('submit').getAttribute('data-question').split(' ');
   let textForAnswer = document.getElementById('answer').value;
@@ -140,6 +145,7 @@ function submit() {
   }
   if (trueAnswer === answers.length) {
     confetti.start()
+    sound.play();
     localStorage.setItem(questionData.join(''), textForAnswer)
     setTimeout(function () { confetti.stop(); }, 2000)
     document.getElementById('final-result').innerHTML = '<i class="fa fa-check-circle" aria-hidden="true"></i>'
