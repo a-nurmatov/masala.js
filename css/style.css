@@ -3,11 +3,13 @@
   font-family: 'Cousine', monospace; }
 
 .container {
-  max-width: 1380px; }
+  max-width: 1380px;
+  height: 100%; }
 
 body {
   background-color: #1F1F2B;
-  color: white; }
+  color: white;
+  min-height: 100vh; }
 
 ul {
   padding: 0;
